@@ -24,6 +24,9 @@ def index():
             flash('The URL is required!')
             return redirect(url_for('index'))
 
+        if "https://" not in url:
+            url = "https://" + url
+
         url_data = conn.execute('INSERT INTO urls (original_url) VALUES (?)',
                                 (url,))
         conn.commit()
@@ -83,6 +86,8 @@ def edit(id):
         if not new_url:
             flash('New url is required!')
             return redirect(url_for('edit', id=id))
+        if "https://" not in new_url:
+            new_url = "https://" + new_url
         conn.execute('UPDATE urls SET original_url = ? WHERE id = ?',
                      (new_url, id))
         conn.commit()
