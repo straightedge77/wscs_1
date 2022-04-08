@@ -1,3 +1,4 @@
+# the script is used to create the database
 import sqlite3
 
 connection = sqlite3.connect('database.db')

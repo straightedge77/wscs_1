@@ -2,6 +2,8 @@
 
 ## Code Introduction
 - app.py is used to connect front and back
+- init_db.py is used to initilize the database
+- schema.sql contains the structure of the database
 - templates/index.html html page for the shortner function
 - templates/stats.html html page for data exhibition
 - tempaltes/edit.html html page for edit the data
